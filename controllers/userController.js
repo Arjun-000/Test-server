@@ -48,7 +48,8 @@ exports.listUsersController = async (req, res) => {
 
 exports.getUserController = async (req, res) => {
     try {
-        const user = await users.findById(req.params.id, '-password')
+        
+        const user = await users.findById(userId, '-password')
         if (!user) return res.status(404).json("User not found")
         res.status(200).json(user)
     } catch (err) {
@@ -57,8 +58,9 @@ exports.getUserController = async (req, res) => {
 }
 
 exports.getUserController = async (req, res) => {
+    const userId = req.params.id
     try {
-        const user = await users.findById(req.params.id, '-password')
+        const user = await users.findById(userId, '-password')
         if (!user) return res.status(404).json("User not found")
         res.status(200).json(user)
     } catch (err) {
