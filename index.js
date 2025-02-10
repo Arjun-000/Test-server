@@ -9,7 +9,7 @@ server.use(cors())
 server.use(express.json())
 server.use(router)
 
-const PORT = 3003 || proce4.env.PORT
+const PORT = 3003 || process.env.PORT
 
 server.listen(PORT, () => {
     console.log(`Server running in ${PORT}`); 
