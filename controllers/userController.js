@@ -55,3 +55,13 @@ exports.getUserController = async (req, res) => {
         res.status(500).json(err)
     }
 }
+
+exports.getUserController = async (req, res) => {
+    try {
+        const user = await users.findById(req.params.id, '-password')
+        if (!user) return res.status(404).json("User not found")
+        res.status(200).json(user)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+}

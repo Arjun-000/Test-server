@@ -11,4 +11,6 @@ router.get('/users', jwtMiddleware, userController.listUsersController)
 
 router.get('/users/:id', jwtMiddleware, userController.getUserController)
 
+router.get('/users/:id', jwtMiddleware, userController.getUserController)
+
 module.exports =  router
